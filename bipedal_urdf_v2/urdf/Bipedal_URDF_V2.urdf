@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Bipedal_URDF_V2">
+  <link
+    name="Base_link">
+    <inertial>
+      <origin
+        xyz="0.011435 -0.00047323 0.0017565"
+        rpy="0 0 0" />
+      <mass
+        value="3.6973" />
+      <inertia
+        ixx="0.0078666"
+        ixy="-2.8985E-06"
+        ixz="-2.6258E-05"
+        iyy="0.0029023"
+        iyz="-1.3249E-06"
+        izz="0.0056487" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/Base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/Base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="IMU_Link">
+    <inertial>
+      <origin
+        xyz="-0.012671 5.2898E-05 0.010235"
+        rpy="0 0 0" />
+      <mass
+        value="0.0077813" />
+      <inertia
+        ixx="9.1431E-07"
+        ixy="-1.7489E-08"
+        ixz="6.1667E-08"
+        iyy="9.1976E-07"
+        iyz="-1.6448E-08"
+        izz="5.4701E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/IMU_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/IMU_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="IMU_Joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0.01"
+      rpy="0 0 0" />
+    <parent
+      link="Base_link" />
+    <child
+      link="IMU_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Camera_Link">
+    <inertial>
+      <origin
+        xyz="-0.013242 0.0002508 -6.1614E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.044093" />
+      <inertia
+        ixx="2.692E-05"
+        ixy="2.4457E-07"
+        ixz="-1.2535E-09"
+        iyy="3.9298E-06"
+        iyz="-2.6933E-09"
+        izz="2.702E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/Camera_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/Camera_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Camera_Joint"
+    type="fixed">
+    <origin
+      xyz="0.05175 0.0007652 0.1395"
+      rpy="0 0 0" />
+    <parent
+      link="Base_link" />
+    <child
+      link="Camera_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="L1_Link">
+    <inertial>
+      <origin
+        xyz="0.072098 0.00063403 0.003937"
+        rpy="0 0 0" />
+      <mass
+        value="0.58873" />
+      <inertia
+        ixx="0.00041744"
+        ixy="4.0731E-07"
+        ixz="1.3738E-06"
+        iyy="0.0002683"
+        iyz="-2.7554E-09"
+        izz="0.0003004" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/L1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/L1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L1_Joint"
+    type="revolute">
+    <origin
+      xyz="0.006 0.0585 -0.047"
+      rpy="0 1.5708 0" />
+    <parent
+      link="Base_link" />
+    <child
+      link="L1_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="L2_Link">
+    <inertial>
+      <origin
+        xyz="-4.9984E-05 0.012853 0.047005"
+        rpy="0 0 0" />
+      <mass
+        value="0.62672" />
+      <inertia
+        ixx="0.00046497"
+        ixy="4.6328E-07"
+        ixz="8.6413E-07"
+        iyy="0.00076206"
+        iyz="-3.7606E-05"
+        izz="0.00040429" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/L2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/L2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L2_Joint"
+    type="revolute">
+    <origin
+      xyz="0.0987 0 0.004"
+      rpy="1.5708 -1.5708 1.5708" />
+    <parent
+      link="L1_Link" />
+    <child
+      link="L2_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="L3_Link">
+    <inertial>
+      <origin
+        xyz="0.03428 -0.0012341 0.029827"
+        rpy="0 0 0" />
+      <mass
+        value="0.98897" />
+      <inertia
+        ixx="0.00071849"
+        ixy="3.5223E-05"
+        ixz="-9.4746E-06"
+        iyy="0.0021936"
+        iyz="5.6196E-07"
+        izz="0.0028375" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/L3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/L3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L3_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.001 0.0515"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="L2_Link" />
+    <child
+      link="L3_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="L4_Link">
+    <inertial>
+      <origin
+        xyz="0.076379 -0.0013265 -0.019409"
+        rpy="0 0 0" />
+      <mass
+        value="0.63642" />
+      <inertia
+        ixx="0.00025641"
+        ixy="5.3735E-06"
+        ixz="1.3547E-05"
+        iyy="0.0013428"
+        iyz="4.452E-06"
+        izz="0.0015459" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/L4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/L4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L4_Joint"
+    type="revolute">
+    <origin
+      xyz="0.185 0 -0.0002"
+      rpy="3.1416 0 0" />
+    <parent
+      link="L3_Link" />
+    <child
+      link="L4_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="L5_Link">
+    <inertial>
+      <origin
+        xyz="0.035627 -0.020944 -0.016392"
+        rpy="0 0 0" />
+      <mass
+        value="0.15035" />
+      <inertia
+        ixx="2.3349E-05"
+        ixy="1.5213E-05"
+        ixz="-5.9161E-08"
+        iyy="0.00023958"
+        iyz="6.928E-08"
+        izz="0.00025435" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/L5_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/L5_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L5_Joint"
+    type="revolute">
+    <origin
+      xyz="0.19 0 -0.00095"
+      rpy="0 0 1.5708" />
+    <parent
+      link="L4_Link" />
+    <child
+      link="L5_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="R1_Link">
+    <inertial>
+      <origin
+        xyz="0.072098 -0.00072688 0.0039382"
+        rpy="0 0 0" />
+      <mass
+        value="0.58873" />
+      <inertia
+        ixx="0.00041744"
+        ixy="6.3742E-07"
+        ixz="1.3655E-06"
+        iyy="0.00026831"
+        iyz="-4.9326E-09"
+        izz="0.00030039" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/R1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/R1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R1_Joint"
+    type="revolute">
+    <origin
+      xyz="0.006 -0.0585 -0.047"
+      rpy="0 1.5708 0" />
+    <parent
+      link="Base_link" />
+    <child
+      link="R1_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="R2_Link">
+    <inertial>
+      <origin
+        xyz="4.9985E-05 -0.012853 0.047005"
+        rpy="0 0 0" />
+      <mass
+        value="0.62672" />
+      <inertia
+        ixx="0.00046497"
+        ixy="4.6327E-07"
+        ixz="-8.6413E-07"
+        iyy="0.00076206"
+        iyz="3.7606E-05"
+        izz="0.00040429" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/R2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/R2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R2_Joint"
+    type="revolute">
+    <origin
+      xyz="0.0987 0 0.004"
+      rpy="1.5708 -1.5708 1.5708" />
+    <parent
+      link="R1_Link" />
+    <child
+      link="R2_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="R3_Link">
+    <inertial>
+      <origin
+        xyz="0.03427 0.0011883 0.029827"
+        rpy="0 0 0" />
+      <mass
+        value="0.98897" />
+      <inertia
+        ixx="0.00071872"
+        ixy="-3.4701E-05"
+        ixz="-9.4351E-06"
+        iyy="0.0021934"
+        iyz="-3.7128E-07"
+        izz="0.0028375" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/R3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/R3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R3_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.001 0.0515"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="R2_Link" />
+    <child
+      link="R3_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="R4_Link">
+    <inertial>
+      <origin
+        xyz="0.07638 0.0013265 -0.019409"
+        rpy="0 0 0" />
+      <mass
+        value="0.63642" />
+      <inertia
+        ixx="0.00025641"
+        ixy="-5.3741E-06"
+        ixz="1.3547E-05"
+        iyy="0.0013428"
+        iyz="-4.4522E-06"
+        izz="0.0015459" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/R4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/R4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R4_Joint"
+    type="revolute">
+    <origin
+      xyz="0.185 0 -0.00019997"
+      rpy="3.1416 0 0" />
+    <parent
+      link="R3_Link" />
+    <child
+      link="R4_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="R5_Link">
+    <inertial>
+      <origin
+        xyz="0.035627 0.020944 -0.016392"
+        rpy="0 0 0" />
+      <mass
+        value="0.15035" />
+      <inertia
+        ixx="2.3349E-05"
+        ixy="-1.5213E-05"
+        ixz="-5.8964E-08"
+        iyy="0.00023958"
+        iyz="-6.9262E-08"
+        izz="0.00025435" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/R5_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/R5_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R5_Joint"
+    type="revolute">
+    <origin
+      xyz="0.19 0 -0.00095003"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="R4_Link" />
+    <child
+      link="R5_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <link
+    name="AL1_Link">
+    <inertial>
+      <origin
+        xyz="1.3769E-09 -0.00018181 0.040078"
+        rpy="0 0 0" />
+      <mass
+        value="0.12061" />
+      <inertia
+        ixx="3.5452E-05"
+        ixy="-8.5439E-12"
+        ixz="-2.2018E-12"
+        iyy="3.2077E-05"
+        iyz="-9.6586E-08"
+        izz="2.4439E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AL1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AL1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="AL1_Joint"
+    type="revolute">
+    <origin
+      xyz="0.0135 0.0599 0.14275"
+      rpy="-1.5708 1.5708 0" />
+    <parent
+      link="Base_link" />
+    <child
+      link="AL1_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="50"
+      velocity="50" />
+  </joint>
+  <link
+    name="AL2_Link">
+    <inertial>
+      <origin
+        xyz="0.067 0.01043 -0.020833"
+        rpy="0 0 0" />
+      <mass
+        value="0.18698" />
+      <inertia
+        ixx="5.5251E-05"
+        ixy="-1.8832E-06"
+        ixz="-1.8832E-06"
+        iyy="7.7113E-05"
+        iyz="1.8559E-11"
+        izz="7.7113E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AL2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AL2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="AL2_Joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0209 0.05675"
+      rpy="1.5708 0 0" />
+    <parent
+      link="AL1_Link" />
+    <child
+      link="AL2_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="50"
+      velocity="50" />
+  </joint>
+  <link
+    name="AL3_Link">
+    <inertial>
+      <origin
+        xyz="0.027025 2.0806E-09 -0.020713"
+        rpy="0 0 0" />
+      <mass
+        value="0.11697" />
+      <inertia
+        ixx="2.1216E-05"
+        ixy="2.1694E-12"
+        ixz="-9.6585E-08"
+        iyy="5.0167E-05"
+        iyz="-2.2491E-13"
+        izz="4.5438E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AL3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AL3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="AL3_Joint"
+    type="revolute">
+    <origin
+      xyz="0.134 -0.010403 -0.010403"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="AL2_Link" />
+    <child
+      link="AL3_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="50"
+      velocity="50" />
+  </joint>
+  <link
+    name="AR1_Link">
+    <inertial>
+      <origin
+        xyz="-1.3769E-09 0.00018182 0.040078"
+        rpy="0 0 0" />
+      <mass
+        value="0.12061" />
+      <inertia
+        ixx="3.5452E-05"
+        ixy="-8.5439E-12"
+        ixz="2.2018E-12"
+        iyy="3.2077E-05"
+        iyz="9.6584E-08"
+        izz="2.4439E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AR1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AR1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="AR1_Joint"
+    type="revolute">
+    <origin
+      xyz="0.0135 -0.0599 0.14275"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="Base_link" />
+    <child
+      link="AR1_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="50"
+      velocity="50" />
+  </joint>
+  <link
+    name="AR2_Link">
+    <inertial>
+      <origin
+        xyz="0.067 -0.01043 -0.020833"
+        rpy="0 0 0" />
+      <mass
+        value="0.18698" />
+      <inertia
+        ixx="5.5251E-05"
+        ixy="1.8832E-06"
+        ixz="-1.8832E-06"
+        iyy="7.7113E-05"
+        iyz="1.8559E-11"
+        izz="7.7113E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AR2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AR2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="AR2_Joint"
+    type="revolute">
+    <origin
+      xyz="0 0.0209 0.05675"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="AR1_Link" />
+    <child
+      link="AR2_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="50"
+      velocity="50" />
+  </joint>
+  <link
+    name="AR3_Link">
+    <inertial>
+      <origin
+        xyz="0.027025 -1.3745E-10 -0.020713"
+        rpy="0 0 0" />
+      <mass
+        value="0.11697" />
+      <inertia
+        ixx="2.1216E-05"
+        ixy="3.7782E-12"
+        ixz="-9.6584E-08"
+        iyy="5.0167E-05"
+        iyz="-2.2491E-13"
+        izz="4.5438E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AR3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Bipedal_URDF_V2/meshes/AR3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="AR3_Joint"
+    type="revolute">
+    <origin
+      xyz="0.134 0.010403 -0.010403"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="AR2_Link" />
+    <child
+      link="AR3_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="50"
+      velocity="50" />
+  </joint>
+<!--
+  <gazebo>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>Base_link</bodyName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>500.0</updateRate>
+    </plugin>
+  </gazebo>
+-->
+
+</robot>

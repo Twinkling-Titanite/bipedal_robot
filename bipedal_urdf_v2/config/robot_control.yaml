@@ -1,0 +1,57 @@
+bipedal_gazebo:
+    # Publish all joint states -----------------------------------
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 1000  
+
+    # L Controllers ---------------------------------------
+    L_hip_controller:
+        type: unitree_legged_control/UnitreeJointController
+        joint: L1_Joint
+        pid: {p: 200.0, i: 0.0, d: 0.5}
+    
+    L_hip2_controller:
+        type: unitree_legged_control/UnitreeJointController
+        joint: L2_Joint
+        pid: {p: 200.0, i: 0.0, d: 0.5}
+
+    L_thigh_controller:
+        type: unitree_legged_control/UnitreeJointController
+        joint: L3_Joint
+        pid: {p: 200.0, i: 0.0, d: 0.5}
+
+    L_calf_controller:
+        type: unitree_legged_control/UnitreeJointController
+        joint: L4_Joint
+        pid: {p: 200.0, i: 0.0, d: 0.5}
+    
+    L_toe_controller:
+        type: unitree_legged_control/UnitreeJointController
+        joint: L5_Joint
+        pid: {p: 200.0, i: 0.0, d: 0.5}
+
+    # R Controllers ---------------------------------------
+    R_hip_controller:
+        type: unitree_legged_control/UnitreeJointController
+        joint: R1_Joint
+        pid: {p: 200.0, i: 0.0, d: 0.5}
+    
+    R_hip2_controller:
+        type: unitree_legged_control/UnitreeJointController
+        joint: R2_Joint
+        pid: {p: 200.0, i: 0.0, d: 0.5}
+
+    R_thigh_controller:
+        type: unitree_legged_control/UnitreeJointController
+        joint: R3_Joint
+        pid: {p: 200.0, i: 0.0, d: 0.5}
+
+    R_calf_controller:
+        type: unitree_legged_control/UnitreeJointController
+        joint: R4_Joint
+        pid: {p: 200.0, i: 0.0, d: 0.5}
+    
+    R_toe_controller:
+        type: unitree_legged_control/UnitreeJointController
+        joint: R5_Joint
+        pid: {p: 200.0, i: 0.0, d: 0.5}
